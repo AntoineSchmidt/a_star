@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>PathFinder</title>
+
+    <!-- Custom fonts for this theme -->
+    <link href="/Portfolio/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Theme CSS -->
+    <link href="/Portfolio/css/freelancer.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="index.css">
+    
+    <script src="index.js"></script>
+    <script src="planner.js"></script>
+</head>
+
+<body onload="init()">
+    <div id="planner">
+        <ul>
+            <li><input type="button" class="pressed" value="Draw" id="black" onclick="color(this)"></li>
+            <li><input type="button" value="Erase" id="white" onclick="color(this)"></li>
+            <li><input type="button" value="Clear" id="clr" onclick="clr()"></li>
+        </ul>
+        <canvas id="can" width="200" height="200"></canvas>
+        <ul>
+            <li><input type="button" value="Find Path >>" id="solve" onclick="solve()"></li>
+            <li><input type="range" id="heuristic" min="0" max="5" value="1"></li>
+            <li>Dijkstra &harr; Greedy</li>
+        </ul>
+        <canvas id="cansolve" width="200" height="200"></canvas>
+    </div>
+    <div>
+        This A* planner uses a costumisable euclidean goal heuristic,<p>
+        from dijkstra (ignoring the goal) to 5x the euclidean distance, leading to quicker solutions but possibly suboptimal pathes.<p>
+        <b>The start is located in the top left corner, the goal in the bottom right corner.</b><p>
+        <a href="https://github.com/AntoineSchmidt/Portfolio/tree/master/projects/a_star/code/">Check out the code</a>
+    </div>
+</body>
+
+</html>
